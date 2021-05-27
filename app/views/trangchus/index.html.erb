@@ -1,0 +1,64 @@
+
+ <%= render "layouts/layout", article: @article %>
+
+
+<div id="viewport">
+<div class="container row" id="noidung">
+      <h1 style="padding: 30px">THỐNG KÊ</h1>
+      <br><br>
+
+      <div class="col-sm-6" style="padding: 20px;">
+          <div class="div1">
+           	<% @Tong = 0 %>
+            <% @user_all.each do |user| %>
+                 <% @Tong+=1 %>
+            <% end %>
+            Có tổng User là: <%= @Tong %>
+
+          </div>
+     </div>
+
+     <div class="col-sm-6" style="padding: 20px;">
+          <div class="div1">
+           	<% @Tong = 0 %>
+            <% @danhmuc_all.each do |danhmuc| %>
+                 <% @Tong+=1 %>
+            <% end %>
+            Có tổng Danh mục là: <%= @Tong %>
+
+          </div>
+     </div>
+
+     <div class="col-sm-6" style="padding: 20px;">
+          <div class="div1">
+           	<% @Tong = 0 %>
+            <% @hoadon_all.each do |hoadon| %>
+                 <% @Tong+=1 %>
+            <% end %>
+            Có tổng Hoá đơn là: <%= @Tong %>
+
+          </div>
+     </div>
+
+
+
+     <div class="col-sm-6" style="padding: 20px;">
+          <div class="div1">
+           	<% @Tong = 0 %>
+            <% @product_all.each do |product| %>
+                 <% @Tong+=1 %>
+            <% end %>
+            Có tổng Sản phẩm là: <%= @Tong %>
+
+          </div>
+     </div>
+
+
+
+    
+     
+
+
+
+</div>
+</div>

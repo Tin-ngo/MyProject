@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<br>
+<br>
+<div class="w3-content w3-display-container" style="min-width: 1000px; background-color: gray; height: 400px">
+    <% @danhmuc_all.each do |danhmuc| %>
+
+          <div class="mySlides">
+                  <div class="col-sm-6" style="padding-top:50px;">
+                     <%= image_tag(danhmuc.image, style: 'width:85%; text-align: center; margin-left: 50px; border-radius: 30px; float:left; height: 300px;') %>
+                  </div>
+                  <div class="col-sm-6" style="padding-top: 70px; margin-left: 450px; color:white;">
+                     <br>
+                       <span style="margin-left: 50px; font-size: 16px;">
+                        <b>
+                          <span style="color:#5fbf00">UY TÍN </span>
+                          - 
+                          <span style="color:orange">CHẤT LƯỢNG </span>
+                          - 
+                          <span style="color:#ff7f00;">THỜI THƯỢNG </span>
+                        </b>
+                      </span>
+                        <br>
+                        
+                     <h4 style="margin-left: 75px;"><%= danhmuc.name %></h4>
+                      <br>
+                      <br>
+                      <a href="#" style="margin-left: 50px;">
+                          <button type="button" class="btn btn-info">Xem Ngay</button>
+                       </a>
+              </div>
+          </div>
+
+     <% end %>
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>

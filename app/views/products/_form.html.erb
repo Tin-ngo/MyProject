@@ -1,0 +1,46 @@
+<div id="viewport">
+  <div class="container-fluid" id="noidung">
+
+  <%= form_with model: @product do |form| %>
+    <div>
+     <%= form.label :name %><br>
+      <%= form.text_field :name %>
+
+     <% @product.errors.full_messages_for(:name).each do |message| %>
+       <div><%= message %></div>
+       <% end %>
+  </div>
+   <div>
+      <%= form.label :soluong %><br>
+      <%= form.text_area :soluong %>
+      <% @product.errors.full_messages_for(:soluong).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :dongia %><br>
+      <%= form.text_area :dongia %>
+      <% @product.errors.full_messages_for(:dongia).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :mota %><br>
+      <%= form.text_area :mota %>
+      <% @product.errors.full_messages_for(:mota).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :image %><br>
+      <%= form.file_field :image %>
+      <% @product.errors.full_messages_for(:image).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+   <div>
+     <%= form.submit %>
+   </div>
+  <% end %>
+</div>
+</div>

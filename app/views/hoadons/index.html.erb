@@ -1,0 +1,67 @@
+
+ <%= render "layouts/layout", hoadon: @hoadon %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+      <h4 style="margin-top: 20px;">Quản lý Hoá Đơn</h4>
+      <br>
+
+    <div style="float: left;">
+      
+    <%= link_to "New Hoá đơn", new_hoadon_path %>
+      </div>
+      <div style="margin-left: 50%;">
+       <%= search_form_for @q do |f| %>
+                                  <%= f.label :'serch by id' %>
+                                  <%= f.search_field :id_cont %>
+                                  <%= f.submit %>
+                           <% end %>
+      </div>
+      <br>
+      <br>
+   
+      <table border="3" cellpadding="10" style="font-size: 15px;">
+          
+          <thead>
+               <tr>
+                  <th>Id Hoadon</th>
+                  <th class="theadd">id User</th>
+                  <th class="theadd">id Sản phẩm</th>
+                  <th class="theadd">Số lượng</th>
+                  <th class="theadd">Đơn giá</th>
+                  <th>Hành động</th>
+               </tr>
+          </thead>
+          <tbody>
+            
+               <% @hoadon_all.each do |hoadon| %>
+               <tr>
+                  <td>
+                  	<%= hoadon.id %>
+                  </td>
+                  <td>
+                   	<%= hoadon.iduser %>
+                  </td>
+                  <td>
+                   	<%= hoadon.idproduct %>
+                  </td>
+                  <td>
+                   	<%= hoadon.soluong %>
+                  </td>
+                  <td>
+                  	<%= hoadon.dongia %>
+                  </td> 
+                  <td>
+                  	<a href="<%= hoadon_path(hoadon) %>" type="button" class="btn  btn-light">
+        				      Chi tiết
+      			       	</a>
+
+                  </td> 
+              </tr>
+         <% end %>
+          </tbody>
+      </table>
+
+</div>
+
+</div>

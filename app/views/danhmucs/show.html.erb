@@ -1,0 +1,41 @@
+
+<%= render "layouts/layout", danhmuc: @danhmuc %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+
+
+
+		 <table border="3" cellpadding="10" style="font-size: 15px; margin-top: 20px;">
+          
+          <thead>
+               <tr>
+                  <th>Id danhmuc</th>
+                  <th class="theadd">Name</th>
+                  <th class="theadd">Image</th>
+                  <th class="theadd">Tools</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td>
+                  	<%= @danhmuc.id %>
+                  </td>
+                  <td>
+                    <%= @danhmuc.name %>
+                  </td>
+                  <td style="width: 50px;">
+                    <%= image_tag(@danhmuc.image, style: 'width:100%') %>
+                  </td>
+                   <td>
+                    <%= link_to "Edit", edit_danhmuc_path(@danhmuc) %>
+                    &emsp;
+                    <%= link_to "Destroy", danhmuc_path(@danhmuc), method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+    </div>
+</div>

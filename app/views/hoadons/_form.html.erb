@@ -1,0 +1,40 @@
+<div id="viewport">
+  <div class="container-fluid" id="noidung">
+
+<h1>New Hoá đơn</h1>
+  <%= form_with model: @hoadon do |form| %>
+    <div>
+     <%= form.label :iduser %><br>
+      <%= form.text_field :iduser %>
+
+     <% @hoadon.errors.full_messages_for(:iduser).each do |message| %>
+       <div><%= message %></div>
+       <% end %>
+  </div>
+   <div>
+      <%= form.label :idproduct %><br>
+      <%= form.text_area :idproduct %>
+      <% @hoadon.errors.full_messages_for(:idproduct).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :soluong %><br>
+      <%= form.text_area :soluong %>
+      <% @hoadon.errors.full_messages_for(:soluong).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.label :dongia %><br>
+      <%= form.text_area :dongia %>
+      <% @hoadon.errors.full_messages_for(:dongia).each do |message| %>
+       <div><%= message %></div>
+      <% end %>
+    </div>
+   <div>
+     <%= form.submit %>
+   </div>
+  <% end %>
+</div>
+</div>

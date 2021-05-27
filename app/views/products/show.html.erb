@@ -1,0 +1,53 @@
+
+<%= render "layouts/layout", product: @product %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+
+
+		 <table border="3" cellpadding="10" style="font-size: 15px; margin-top: 20px;">
+          
+          <thead>
+               <tr>
+                  <th>Id Product</th>
+                  <th class="theadd">Tên Product</th>
+                  <th class="theadd">Số lượng</th>
+                  <th class="theadd">Đơn giá</th>
+                  <th class="theadd">Hình ảnh</th>
+                  <th class="theadd">Mô tả</th>
+                  <th class="theadd">Tool</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td>
+                  	<%= @product.id %>
+                  </td>
+                  <td>
+                   	<%= @product.name %>
+                  </td>
+                  <td>
+                   	<%= @product.soluong %>
+                  </td>
+                  <td>
+                   	<%= @product.dongia %>
+                  </td>
+                  <td style="width: 50px;">
+                    <%= image_tag(@product.image, style: 'width:100%') %>
+                  </td>
+                  <td style="max-width: 250px;">
+                    <%= @product.mota %>
+                  </td>
+                   <td>
+                     <%= link_to "Edit", edit_product_path(@product) %>
+                     &emsp;
+                      <%= link_to "Delete", product_path(@product), method: :delete,
+                                data: { confirm: "Are you sure?" } %>
+                      </i>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+    </div>
+</div>

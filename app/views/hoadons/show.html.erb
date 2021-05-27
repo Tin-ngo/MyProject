@@ -1,0 +1,49 @@
+
+<%= render "layouts/layout", hoadon: @hoadon %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+
+
+
+		 <table border="3" cellpadding="10" style="font-size: 15px; margin-top: 20px;">
+          
+          <thead>
+               <tr>
+                  <th>Id hoadon</th>
+                  <th class="theadd">Id User</th>
+                  <th class="theadd">Id sản phẩm</th>
+                  <th class="theadd">Đơn giá</th>
+                  <th class="theadd">Số lượng</th>
+                  <th class="theadd">Tools</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td>
+                  	<%= @hoadon.id %>
+                  </td>
+                  <td>
+                   	<%= @hoadon.iduser %>
+                  </td>
+                  <td>
+                   	<%= @hoadon.idproduct %>
+                  </td>
+                  <td>
+                    <%= @hoadon.dongia %>
+                  </td>
+                  <td>
+                    <%= @hoadon.soluong %>
+                  </td>
+                   <td>
+                   <%= link_to "Edit", edit_hoadon_path(@hoadon) %>
+                   &emsp;
+                   <%= link_to "Destroy", hoadon_path(@hoadon), method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+    </div>
+</div>

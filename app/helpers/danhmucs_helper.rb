@@ -1,0 +1,2 @@
+module DanhmucsHelper
+end

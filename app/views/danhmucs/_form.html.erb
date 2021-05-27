@@ -1,0 +1,30 @@
+<div id="viewport">
+  <div class="container-fluid" id="noidung">
+
+<h1>New Danh mục</h1>
+  <%= form_with model: @danhmuc do |form| %>
+
+    <div>
+     <%= form.label :name %><br>
+      <%= form.text_field :name %>
+
+     <% @danhmuc.errors.full_messages_for(:name).each do |message| %>
+       <div><%= message %></div>
+       <% end %>
+  </div>
+
+  <div>
+     <%= form.label :image %><br>
+      <%= form.file_field :image %>
+
+     <% @danhmuc.errors.full_messages_for(:name).each do |message| %>
+       <div><%= message %></div>
+       <% end %>
+  </div>
+
+   <div>
+     <%= form.submit %>
+   </div>
+  <% end %>
+</div>
+</div>

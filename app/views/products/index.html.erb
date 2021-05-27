@@ -1,0 +1,64 @@
+
+ <%= render "layouts/layout", article: @article %>
+        
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+    <br>
+    <br>
+      <h4>Quản lý Sản phẩm</h4>
+      <br>
+      <div style="float: left;">
+      <%= link_to "New Product", new_product_path %>
+      </div>
+      <div style="margin-left: 50%;">
+       <%= search_form_for @q do |f| %>
+                                  <%= f.label :'serch by name' %>
+                                  <%= f.search_field :name_cont %>
+                                  <%= f.submit %>
+                           <% end %>
+      </div>
+      <br>
+      <br>
+      <table border="3" cellpadding="10" style="font-size: 15px;">          <thead>
+               <tr>
+                  <th>Id Product</th>
+                  <th class="theadd">Tên Product</th>
+                  <th class="theadd">Số Lượng</th>
+                  <th class="theadd">Đơn giá</th>
+                  <th class="theadd">Hình ảnh</th>
+                  <th class="theadd">Mô tả</th>
+                  <th>Hành động</th>
+               </tr>
+          </thead>
+          <tbody>
+               	<% @product_all.each do |product| %>
+               <tr>
+                  <td>
+                  	<%= product.id %>
+                  </td>
+                  <td>
+                   	<%= product.name %>
+                  </td>
+                  <td>
+                   	<%= product.soluong %>
+                  </td>
+                  <td>
+                   	<%= product.dongia %>
+                  </td>
+                  <td style="width: 50px;">
+                    <%= image_tag(product.image, style: 'width:100%') %>
+                  </td>
+                  <td style="max-width: 250px;">
+                    <%= product.mota %>
+                  </td>
+                  <td>
+                  	<a href="<%= product_path(product) %>" type="button" class="btn  btn-light">
+        				      Chi tiết
+      			       	</a>
+                  </td> 
+              </tr>
+         <% end %>
+          </tbody>
+      </table>
+</div>
+</div>

@@ -1,0 +1,133 @@
+ 
+ <div class="header-middle"><!--header-middle-->
+                <div class="row row_header">
+                  <div class="col-sm-9" style="color: gray;">
+                       <div class="dropdown" style="float:left;">
+                         <button class="dropbtnn">Dịch Vụ Khách Hàng
+                          <i class="fa fa-caret-down"></i>
+                         </button>
+                         <div class="dropdown-content" style="left:0;">
+                         <a href="homes/users/new">Giới thiệu cửa hàng</a>
+                         <a href="#">Thông tin liên hệ</a>
+                         <a href="#">Gửi phản hồi</a>
+                         </div>
+                       </div>
+                       <span class="kedoc">|</span>
+                       Open: 24 / 7 &emsp; Mail : tin123@gmail.com 
+                       &emsp; Phone:(+84): 707700624
+                  </div>
+
+
+                  <div class="col-sm-2">
+                        <div class="shop-menu">
+                            <ul class="nav navbar-nav" style="margin-left: 90px;">
+                         <!-- đăng ký -->
+                                <!-- Đăng ký -->
+                          <% if current_user %>
+                          <% else %>
+                               <li>
+                                 <div class="dropdown221">
+                                  <i class="fa fa-plus img_user" title="Tài Khoản">
+                                     
+                                      <%= link_to 'Đăng ký', new_user_registration_path, style:"background-color:gray; color:white; text-decoration: none;" %>
+                                     
+                                   </i>
+                                 </div>
+                               </li>
+                          <% end %>
+                            </ul>
+                        </div>
+                      </div>
+
+
+
+                      <div class="col-sm-1">
+                        <div class="dropdown_home" style="float:right;">
+                          <button class="dropbtn_home">
+                            <i class="fa fa-user img_user" title="Tài Khoản"></i>
+                          </button>
+                           <div class="dropdown-content_home">
+
+                              <% if current_user %>
+                                     <% if current_user.admin %>
+                                        <a href="/trangchus">Trang quản lý</a>
+                                     <% end %>
+                             <a href="#">QL Tài khoản </a>
+                                <%= link_to 'Đăng xuất', destroy_user_session_path, method: :delete %>
+                              <% else %>
+                                 <%= link_to 'Đăng nhập', new_user_session_path %>
+                              <% end %>
+                           </div>
+                         </div>
+                      </div>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+         <div class="header-bottom" style="padding-bottom: 100px;">
+         <!--header-bottom-->
+            <div style="width: 95%; margin: auto;">
+                <div class="row">
+                    <div class="col-sm-8">
+                       
+                            <ul class="navbar-collapse" style="padding-top: 20px;">
+                                <li>
+                                    <a href="/">
+                                        <img class="btn-group" src="https://tse3.mm.bing.net/th?id=OIP.FHcBWqJI3refK7974-iX4wHaFj&pid=Api&P=0&w=212&h=160" alt="logo" title="về trang chủ">
+                                     
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/cuahangs">Cửa Hàng</a>
+                                </li> 
+
+                  <% @danhmuc_all.each do |danhmuc| %>
+                                <li class="dropdown" style="padding-left: 20px;">
+                                   <a href="#" style="font-size: 15px;">
+                                      <%= danhmuc.name %>
+                                   </a>
+                                </li>
+                  <% end %>
+
+                            </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <form method="POST" action="#">
+                           <div class="search_box pull-right">
+                              <input type="text" placeholder="Search By Name" name="timkiem_sp">&ensp;
+                               <button type="submit"><i class="fa fa-search"></i></button>
+                            <a id="a1" href="#"> <i class="fa fa-shopping-cart" title="Giỏ Hàng Của Bạn"></i>&emsp;</a>
+                         </div>
+
+                    <!--       < search_form_for @q do |f| %>
+                                  <f.label :name_cont %>
+                                  <= f.search_field :name_cont %>
+                                  <= f.submit %>
+                           < end %> -->
+
+
+                     </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+      
+ <!-- /header -->
+ <script>
+   function TBdangxuat() {
+        ("Bạn muốn đăng xuất?");
+}
+ </script>
+
+
+
+
+
+

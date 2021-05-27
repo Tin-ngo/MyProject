@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iduser: 1
+  idproduct: 1
+  dongia: 1.5
+  soluong: 1
+
+two:
+  iduser: 1
+  idproduct: 1
+  dongia: 1.5
+  soluong: 1

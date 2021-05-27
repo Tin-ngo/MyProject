@@ -1,0 +1,58 @@
+
+ <%= render "layouts/layout", hoadon: @hoadon %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+      <h4 style="margin-top: 20px;">Quản lý Danh mục</h4>
+      <br>
+
+    <div style="float: left;">
+      
+    <%= link_to "New Danh Mục", new_danhmuc_path %>
+      </div>
+      <div style="margin-left: 50%;">
+       <%= search_form_for @q do |f| %>
+                                  <%= f.label :'serch by name' %>
+                                  <%= f.search_field :name_cont %>
+                                  <%= f.submit %>
+                           <% end %>
+      </div>
+      <br>
+      <br>
+   
+      <table border="3" cellpadding="10" style="font-size: 15px;">
+          
+          <thead>
+               <tr>
+                  <th>Id Danhmuc</th>
+                  <th class="theadd">Name</th>
+                  <th class="theadd">Image</th>
+                  <th>Hành động</th>
+               </tr>
+          </thead>
+          <tbody>
+            
+               <% @danhmuc_all.each do |danhmuc| %>
+               <tr>
+                  <td>
+                  	<%= danhmuc.id %>
+                  </td>
+                  <td>
+                   	<%= danhmuc.name %>
+                  </td>
+                  <td style="width: 50px;">
+                    <%= image_tag(danhmuc.image, style: 'width:100%') %>
+                  </td>
+                  <td>
+                		<a href="<%= danhmuc_path(danhmuc) %>" type="button" class="btn  btn-light">
+        				      Chi tiết
+      			       	</a>
+                  </td> 
+              </tr>
+         <% end %>
+          </tbody>
+      </table>
+
+</div>
+
+</div>

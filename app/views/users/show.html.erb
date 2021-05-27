@@ -1,0 +1,43 @@
+
+<%= render "layouts/layout", aruser: @user %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+
+ <!--      <h1><%= @user.username %></h1>
+		<p><%= @user.password %></p> -->
+
+		 <table border="3" cellpadding="10" style="font-size: 15px; margin-top: 20px;">
+          
+          <thead>
+               <tr>
+                  <th>Id User</th>
+                  <th class="theadd">Tên User</th>
+                  <th class="theadd">PassWord</th>
+                  <th class="theadd">Tool</th>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                  <td>
+                  	<%= @user.id %>
+                  </td>
+                  <td>
+                   	<%= @user.username %>
+                  </td>
+                  <td>
+                   	<%= @user.password %>
+                  </td>
+                   <td>
+                      <%= link_to "Edit", edit_user_path(@user) %>
+                     &emsp;
+                        <%= link_to "Delete", user_path(@user),method: :delete,
+                        data: { confirm: "Are you sure?" } %>
+                      </i>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+    </div>
+</div>

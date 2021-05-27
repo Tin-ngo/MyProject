@@ -1,0 +1,58 @@
+
+ <%= render "layouts/layout", article: @article %>
+
+ <div id="viewport">
+	<div class="container-fluid" id="noidung">
+      <h4 style="margin-top: 20px;">Quản lý User</h4>
+      <br>
+
+   
+      <div style="margin-left: 50%;">
+       <%= search_form_for @q do |f| %>
+                                  <%= f.label :'serch by email' %>
+                                  <%= f.search_field :email_cont %>
+                                  <%= f.submit %>
+                           <% end %>
+      </div>
+  
+
+      <br>
+      <br>
+   
+      <table border="3" cellpadding="10" style="font-size: 15px;">
+          
+          <thead>
+               <tr>
+                  <th>Id User</th>
+                  <th class="theadd">Email</th>
+                  <th class="theadd">PassWord</th>
+                <!--   <th>Hành động</th> -->
+               </tr>
+          </thead>
+          <tbody>
+               	<% @user_all.each do |user| %>
+               <tr>
+                  <td>
+                  	<%= user.id %>
+                  </td>
+                  <td>
+                   	<%= user.email %>
+                  </td>
+                  <td>
+                   	<%= user.password %> *******
+                  </td>
+                <!--   <td>
+                  	<a href="<%= users_path(user) %>" type="button" class="btn btn-light">
+        				      Chi tiết
+      			       	</a>
+                  </td>  -->
+              </tr>
+        <% end %>
+
+             
+          </tbody>
+      </table>
+
+</div>
+
+</div>
