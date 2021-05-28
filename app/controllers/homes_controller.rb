@@ -5,6 +5,8 @@ class HomesController < ApplicationController
 
   def index
   	@danhmuc_all = Danhmuc.all
+    @q = Product.ransack(params[:q])
+    @product_all = @q.result
   end
 
   # cho người dùng đăng ký

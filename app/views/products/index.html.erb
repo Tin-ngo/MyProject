@@ -26,7 +26,7 @@
                   <th class="theadd">Số Lượng</th>
                   <th class="theadd">Đơn giá</th>
                   <th class="theadd">Hình ảnh</th>
-                  <th class="theadd">Mô tả</th>
+                  <!-- có thể thêm mô tả ở đây -->
                   <th>Hành động</th>
                </tr>
           </thead>
@@ -48,9 +48,9 @@
                   <td style="width: 50px;">
                     <%= image_tag(product.image, style: 'width:100%') %>
                   </td>
-                  <td style="max-width: 250px;">
-                    <%= product.mota %>
-                  </td>
+                  
+                     <!-- có thể thêm mô tả ở đây -->
+
                   <td>
                   	<a href="<%= product_path(product) %>" type="button" class="btn  btn-light">
         				      Chi tiết

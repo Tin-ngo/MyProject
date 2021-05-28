@@ -88,8 +88,8 @@
 
                   <% @danhmuc_all.each do |danhmuc| %>
                                 <li class="dropdown" style="padding-left: 20px;">
-                                   <a href="#" style="font-size: 15px;">
-                                      <%= danhmuc.name %>
+                                   <a href="/cuahangs?q%5Bname_cont%5D=<%= danhmuc.name %>&commit=Search" style="font-size: 15px;">
+                                      Sản phẩm <%= danhmuc.name %>
                                    </a>
                                 </li>
                   <% end %>
@@ -97,22 +97,26 @@
                             </ul>
                     </div>
                     <div class="col-sm-4">
-                        <form method="POST" action="#">
+                        <!-- <form method="POST" action="#">
                            <div class="search_box pull-right">
                               <input type="text" placeholder="Search By Name" name="timkiem_sp">&ensp;
                                <button type="submit"><i class="fa fa-search"></i></button>
                             <a id="a1" href="#"> <i class="fa fa-shopping-cart" title="Giỏ Hàng Của Bạn"></i>&emsp;</a>
-                         </div>
+                         </div> -->
 
-                    <!--       < search_form_for @q do |f| %>
-                                  <f.label :name_cont %>
-                                  <= f.search_field :name_cont %>
-                                  <= f.submit %>
-                           < end %> -->
+                    <div class="search_box pull-right">
+                          <%= search_form_for @q, :url => "cuahangs" do |f| %>
+                                  <%= f.label :"Serch by name" %>
+                                  <%= f.search_field :name_cont %>
+                     <!-- <= f.submit > dùng cácch f.submit cũng được nhưng khong sửa giao diện-->
+                                  <button type="submit"><i class="fa fa-search"></i></button>
+                           <% end %>
 
 
-                     </form>
+                   <!--   </form> -->
                     </div>
+
+
                 </div>
             </div>
         </div>

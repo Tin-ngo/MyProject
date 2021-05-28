@@ -1,0 +1,14 @@
+<%= render "layouts/header", home: @home %>
+
+
+
+	<div class="col-sm-2 box">
+			<div style="width: 100%;">
+				<%= image_tag(@product.image, style: 'width:200px; height: 200px;') %>
+				<p><%= @product.name %></p>
+			</div>
+	</div>
+
+
+
+<%= render "layouts/footer", home: @home %>

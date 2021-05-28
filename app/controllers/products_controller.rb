@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   	# @product_all = Product.all
     @q = Product.ransack(params[:q])
     @product_all = @q.result
+    # @product_all = Product.where(idDanhmuc: params[:id])
   end
   def show
     @product = Product.find(params[:id])

@@ -5,10 +5,12 @@
 <div class="row box-wrap">
 <% @product_all.each do |product| %>
 	<div class="col-sm-2 box">
-		<div style="width: 100%;">
-			<%= image_tag(product.image, style: 'width:200px; height: 200px;') %>
-			<p><%= product.name %></p>
-		</div>
+		<a href="<%= cuahang_path(product) %>">
+			<div style="width: 100%;">
+				<%= image_tag(product.image, style: 'width:200px; height: 200px;') %>
+				<p><%= product.name %></p>
+			</div>
+		</a>
 	</div>
  <% end %>	
 </div>
