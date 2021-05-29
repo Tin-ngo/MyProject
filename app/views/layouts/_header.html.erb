@@ -105,16 +105,16 @@
                          </div> -->
 
                     <div class="search_box pull-right">
-                          <%= search_form_for @q, :url => "cuahangs" do |f| %>
+                          <%= search_form_for @q, :url => "/cuahangs" do |f| %>
                                   <%= f.label :"Serch by name" %>
                                   <%= f.search_field :name_cont %>
                      <!-- <= f.submit > dùng cácch f.submit cũng được nhưng khong sửa giao diện-->
                                   <button type="submit"><i class="fa fa-search"></i></button>
                            <% end %>
-
+                    </div>
 
                    <!--   </form> -->
-                    </div>
+                    
 
 
                 </div>

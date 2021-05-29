@@ -1,19 +1,55 @@
 <%= render "layouts/header", home: @home %>
 
-<h3 style="text-align: center; padding: 50px;">Tất cả sản phẩm</h1>
+<h3 style="text-align: center; padding: 50px;"	>Sản phẩm</h1>
+
+ <div class="dropdown_home" style="margin-left: 80.5%; padding-bottom: 20px; margin-top: -100px;">
+ 		<button type="button" class="btn btn-primary dropbtn_home">Sắp xếp theo giá</button>
+        <div class="dropdown-content_home">
+            <a href="<%= cuahangs_path(sort_by: 'tang') %>">Giá từ thấp đến cao</a>
+            <a href="<%= cuahangs_path(sort_by: 'giam') %>">Giá từ cao đến thấp</a>
+        </div>
+</div>
+
 
 <div class="row box-wrap">
+<% num = 0 %>
 <% @product_all.each do |product| %>
+	<% num = num+1 %>
 	<div class="col-sm-2 box">
 		<a href="<%= cuahang_path(product) %>">
 			<div style="width: 100%;">
 				<%= image_tag(product.image, style: 'width:200px; height: 200px;') %>
 				<p><%= product.name %></p>
+				<p><%= product.dongia %></p>
 			</div>
 		</a>
 	</div>
  <% end %>	
+
+ <div>
+ 	<center>
+ 	<% if @page > 0 %>
+	<a style="font-size: 30px; text-decoration: none;" href="<%= cuahangs_path(page: @page-1) %>" 
+		title="trở về trang trước">
+		<i class="fa fa-chevron-left" aria-hidden="true"></i>
+	</a>
+	<% end %>
+	<% if num == 4 %>
+	<span style="font-size: 30px; padding: 30px;">|</span>
+	<a style="font-size: 30px; text-decoration: none;" href="<%= cuahangs_path(page: @page+1) %>"
+		title="Đến trang tiếp theo">
+		<i class="fa fa-chevron-right" aria-hidden="true"></i>
+	</a>
+	<% end %>
+	</center>
 </div>
+
+</div>
+
+
+
+
+
 
 <%= render "layouts/footer", home: @home %>
 
