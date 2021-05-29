@@ -7,7 +7,7 @@
                           <i class="fa fa-caret-down"></i>
                          </button>
                          <div class="dropdown-content" style="left:0;">
-                         <a href="homes/users/new">Giới thiệu cửa hàng</a>
+                         <a href="#">Giới thiệu cửa hàng</a>
                          <a href="#">Thông tin liên hệ</a>
                          <a href="#">Gửi phản hồi</a>
                          </div>
@@ -24,6 +24,7 @@
                          <!-- đăng ký -->
                                 <!-- Đăng ký -->
                           <% if current_user %>
+
                           <% else %>
                                <li>
                                  <div class="dropdown221">
@@ -110,6 +111,8 @@
                                   <%= f.search_field :name_cont %>
                      <!-- <= f.submit > dùng cácch f.submit cũng được nhưng khong sửa giao diện-->
                                   <button type="submit"><i class="fa fa-search"></i></button>
+                                  &emsp;
+                                  <i class="fa fa-shopping-cart" aria-hidden="true" title="Giỏ hàng"></i>
                            <% end %>
                     </div>
 

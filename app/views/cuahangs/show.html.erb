@@ -22,5 +22,59 @@
 </div>
 
 
+<div class="row" style="margin: 50px;">
+	
+	<div class="col-sm-3 box" style="padding: 30px;">
+<!-- Thêm bình luận -->
+		<h4>Thêm bình luận của bạn:</h4>
+			<%= form_with model: [ @product, @product.comments.build ] do |form| %>
+  		<p>
+    		<%= form.label :'Nhập tên của bạn' %><br>
+    		<%= form.text_field :commenter %>
+  		</p>
+  		<p>
+    		<%= form.label :"Nhập nội dung" %><br>
+    		<%= form.text_area :body %>
+  		</p>
+  		<p>
+    		<%= form.submit %>
+  		</p>
+			<% end %>
+	</div>
+
+<!-- hiển thị bình luận -->
+	<div class="col-sm-7">
+		<h2>Bình luận</h2>
+		<table>
+			<tr>
+				<td style="padding:10px;">
+					Tên
+				</td style="padding:10px;">
+				<td style="text-align: left">
+					Nội dung
+				</td>
+			</tr>
+			<% @product.comments.each do |comment| %>
+   			<tr>
+   				<td style="padding:10px;">
+   			 		<strong><%= comment.commenter %></strong>
+   			 		&emsp;
+   			 	</td>
+   			 	<td style="padding:10px;">
+    				<strong><%= comment.body %></strong>
+    			</td>
+   			</tr>
+    		
+  		
+			<% end %>
+		</table>
+	</div>
+
+</div>
+
 
 <%= render "layouts/footer", home: @home %>
+
+
+
+

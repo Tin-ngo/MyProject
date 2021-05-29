@@ -4,4 +4,6 @@ class Product < ApplicationRecord
 	validates :dongia, presence: true
 	validates :mota, presence: true
 	has_one_attached :image
+
+	has_many :comments
 end

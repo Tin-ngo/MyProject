@@ -54,4 +54,8 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :soluong, :dongia, :mota, :image)
     end
 
+    def comment_params
+      params.require(:comment).permit(:commenter, :body)
+    end
+
 end

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
-  get 'cuahangs/index'
+
   devise_for :users
+
+
+  get 'cuahangs/index'
   get 'homes/index'
   get 'trangchus/index'
   get 'danhmucs/index'
@@ -18,7 +21,9 @@ Rails.application.routes.draw do
 #của model product
   # get "/products", to: "products#index"
   # get "/products/:id", to: "products#show"
-  resources :products
+  resources :products do
+    resources :comments
+  end
 #của model hoadon
   # get "/hoadons", to: "hoadons#index"
   # get "/hoadons/:id", to: "hoadons#show"
