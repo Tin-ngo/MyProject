@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
 
   devise_for :users
-
+  resources :users, :only => [:show]
 
   get 'cuahangs/index'
   get 'homes/index'
@@ -40,7 +40,10 @@ Rails.application.routes.draw do
 
   get "/users", to: "users#index"
 
+  get "/cuahangs/users/:id", to: "danhmucs#show"
 
   resources :cuahangs
+
+  resources :carts
 
 end

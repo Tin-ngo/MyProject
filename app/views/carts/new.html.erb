@@ -1,0 +1,45 @@
+<%= render "layouts/header", home: @home %>
+
+<center>
+    <br>
+    <h1>Xác nhận hoá đơn</h1>
+    <br>
+
+<%= form_with model: @hoadon do |form| %>
+  <div>
+    <%= form.label :"id User" %><br>
+    <input type="text" name="hoadon[iduser]" id="hoadon_iduser" value="<%= current_user.id %>">
+  </div>
+
+  <div>
+    <%= form.label :"id Sản phẩm" %><br>
+    <input type="text" name="hoadon[idproduct]" id="hoadon_idproduct" value="<%= params[:id] %>">
+  </div>
+
+
+  <div>
+    <%= form.label :"Số lượng" %><br>
+    <input type="text" name="hoadon[soluong]" id="hoadon_soluong" value="<%= params[:soluong] %>">
+  </div>
+
+
+  <div>
+    <%= form.label :"Đơn giá" %><br>
+    <input type="text" name="hoadon[dongia]" id="hoadon_dongia" value="<%= params[:dongia] %>">
+  </div>
+
+
+
+<br>
+  <div>
+    <input type="submit" value="Xác nhận hoá đơn">
+  </div>
+<% end %>
+</center>
+
+
+<%= render "layouts/footer", home: @home %>
+
+
+
+

@@ -233,6 +233,48 @@ div.col-sm-4{
   .w3-display-container:hover .w3-display-hover{display:block}.w3-display-container:hover span.w3-display-hover{display:inline-block}
   .w3-display-container{position:relative}
 
+.w3-content{
+    background-image: url('https://tse4.mm.bing.net/th?id=OIP.f2vj0nQ62EysR2Uq0ZvE6QHaEK&pid=Api&P=0&w=278&h=157');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 400px;
+    border-radius: 20px;
+  }
+  .dot {
+            cursor:pointer;
+            height: 13px;
+            width: 13px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+          }
+          /* khi được hover, active đổi màu nền */
+          .active, .dot:hover {
+            background-color: #717171;
+          }
+
+          /* Thêm hiệu ứng khi chuyển đổi các slide */
+          .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 3s;
+            animation-name: fade;
+            animation-duration: 3s;
+          }
+
+          @-webkit-keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+
+          @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+          }
+
+
 
 
 

@@ -18,7 +18,7 @@ class HoadonsController < ApplicationController
     @hoadon = Hoadon.new(hoadon_params)
 
     if @hoadon.save
-      redirect_to @hoadon
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

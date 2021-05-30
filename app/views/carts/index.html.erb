@@ -1,0 +1,38 @@
+<%= render "layouts/header", home: @home %>
+
+
+<h2 class="text-center" style="padding: 20px;">Giỏ hàng</h2>
+<div class="container"> 
+ <table id="cart" class="table table-hover table-condensed"> 
+  <thead> 
+   <tr> 
+    <th style="width:50%">iduser</th> 
+    <th style="width:10%">iSanPham</th> 
+    <th style="width:8%">Số lượng</th> 
+    <th style="width:22%" class="text-center">Don gia</th> 
+    <th style="width:10%"> Mua lúc </th> 
+   </tr> 
+  </thead> 
+  <% @hoadon.each do |hoadon| %>
+  <tbody><tr> 
+   <td data-th="Product"> 
+    <%= hoadon.iduser %> 
+   </td> 
+   <td data-th="Price"><%= hoadon.idproduct %> </td> 
+   <td data-th="Quantity"><%= hoadon.soluong %> 
+   </td> 
+   <td data-th="Subtotal" class="text-center"><%= hoadon.dongia %> </td> 
+   <td>
+    <%= hoadon.created_at %> 
+   </td> 
+  </tr> 
+   <% end %>
+  
+   
+  </tfoot> 
+ </table>
+</div>
+
+
+
+<%= render "layouts/footer", home: @home %>

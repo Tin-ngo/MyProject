@@ -4,7 +4,7 @@
  <div id="viewport">
 	<div class="container-fluid" id="noidung">
 
- <!--      <h1><%= @user.username %></h1>
+ <!--      <h1><%= @user.email %></h1>
 		<p><%= @user.password %></p> -->
 
 		 <table border="3" cellpadding="10" style="font-size: 15px; margin-top: 20px;">
@@ -23,16 +23,16 @@
                   	<%= @user.id %>
                   </td>
                   <td>
-                   	<%= @user.username %>
+                   	<%= @user.email %>
                   </td>
                   <td>
                    	<%= @user.password %>
                   </td>
                    <td>
-                      <%= link_to "Edit", edit_user_path(@user) %>
+                <!--       <= link_to "Edit", edit_user_path(@user) %>
                      &emsp;
-                        <%= link_to "Delete", user_path(@user),method: :delete,
-                        data: { confirm: "Are you sure?" } %>
+                        <= link_to "Delete", user_path(@user),method: :delete,
+                        data: { confirm: "Are you sure?" } %> -->
                       </i>
                   </td>
               </tr>

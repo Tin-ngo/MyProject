@@ -7,14 +7,16 @@
                           <i class="fa fa-caret-down"></i>
                          </button>
                          <div class="dropdown-content" style="left:0;">
-                         <a href="#">Giới thiệu cửa hàng</a>
-                         <a href="#">Thông tin liên hệ</a>
+                         <a href="#gioithieu">Giới thiệu cửa hàng</a>
+                         <a href="#lienhe">Thông tin liên hệ</a>
                          <a href="#">Gửi phản hồi</a>
                          </div>
                        </div>
                        <span class="kedoc">|</span>
                        Open: 24 / 7 &emsp; Mail : tin123@gmail.com 
                        &emsp; Phone:(+84): 707700624
+                       
+                            
                   </div>
 
 
@@ -24,7 +26,7 @@
                          <!-- đăng ký -->
                                 <!-- Đăng ký -->
                           <% if current_user %>
-
+                                <span style="padding-top: 16px; color: white;"><%= current_user.email %></span> 
                           <% else %>
                                <li>
                                  <div class="dropdown221">
@@ -53,7 +55,6 @@
                                      <% if current_user.admin %>
                                         <a href="/trangchus">Trang quản lý</a>
                                      <% end %>
-                             <a href="#">QL Tài khoản </a>
                                 <%= link_to 'Đăng xuất', destroy_user_session_path, method: :delete %>
                               <% else %>
                                  <%= link_to 'Đăng nhập', new_user_session_path %>
@@ -84,12 +85,12 @@
                                     </a>
                                 </li>
                                 <li class="dropdown">
-                                    <a href="/cuahangs">Cửa Hàng</a>
+                                    <a style="text-decoration: none; color: black; font-size: 20px;" href="/cuahangs">Cửa Hàng</a>
                                 </li> 
 
                   <% @danhmuc_all.each do |danhmuc| %>
                                 <li class="dropdown" style="padding-left: 20px;">
-                                   <a href="/cuahangs?q%5Bname_cont%5D=<%= danhmuc.name %>&commit=Search" style="font-size: 15px;">
+                                   <a style="text-decoration: none; color: black; font-style: italic;  font-size: 17px;" href="/cuahangs?q%5Bname_cont%5D=<%= danhmuc.name %>&commit=Search" style="font-size: 15px;">
                                       Sản phẩm <%= danhmuc.name %>
                                    </a>
                                 </li>
@@ -112,7 +113,13 @@
                      <!-- <= f.submit > dùng cácch f.submit cũng được nhưng khong sửa giao diện-->
                                   <button type="submit"><i class="fa fa-search"></i></button>
                                   &emsp;
+                                  <% if current_user %>
+                                  <a href="/carts?iduser=<%= current_user.id %>">
+                                  <% else %>
+                                  <a href="/users/sign_in">
+                                  <% end %>
                                   <i class="fa fa-shopping-cart" aria-hidden="true" title="Giỏ hàng"></i>
+                                  </a>
                            <% end %>
                     </div>
 

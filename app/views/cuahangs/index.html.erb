@@ -16,11 +16,13 @@
 <% @product_all.each do |product| %>
 	<% num = num+1 %>
 	<div class="col-sm-2 box">
-		<a href="<%= cuahang_path(product) %>">
+		<a style="text-decoration: none; color: black;" href="<%= cuahang_path(product) %>">
 			<div style="width: 100%;">
-				<%= image_tag(product.image, style: 'width:200px; height: 200px;') %>
+				<%= image_tag(product.image, style: 'width:200px; height: 200px; margin-bottom: 20px;') %>
+				<center>
 				<p><%= product.name %></p>
-				<p><%= product.dongia %></p>
+				<p><%= product.dongia %> vnd</p>
+				</center>
 			</div>
 		</a>
 	</div>
